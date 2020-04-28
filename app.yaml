@@ -12,8 +12,8 @@ handlers:
 - url: /
   script: handlers.main.app
 
-- url: /publicacion/add
-  script: handlers.publicacion.add.app
+- url: /publicaciones/add
+  script: handlers.publicaciones.addPublicacion.app
   login: required
 
 libraries:

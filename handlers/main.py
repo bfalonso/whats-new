@@ -17,12 +17,15 @@
 import webapp2
 from webapp2_extras import jinja2
 from webapp2_extras.users import users
+from model.publicacion import Publicacion
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
+        publicaciones = Publicacion.query().order(-Publicacion.fecha)
 
         if user:
+            print(user.email())
             url_user = users.create_logout_url("/")
         else:
             url_user = users.create_login_url("/")
@@ -31,7 +34,8 @@ class MainHandler(webapp2.RequestHandler):
 
         valores = {
             "user": user,
-            "url_user": url_user
+            "url_user": url_user,
+            "publicaciones": publicaciones
         }
 
         self.response.write(jinja.render_template("index.html", **valores))

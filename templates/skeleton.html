@@ -16,17 +16,14 @@
 <body>
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link" href="#">Descubrir</a>
+        <a class="nav-link" href="/">Ver publicaciones</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Mis publicaciones</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Añadir publicación</a>
+        <a class="nav-link" href="/publicaciones/add">Añadir publicación</a>
       </li>
       <li class="nav-item">
           {% if not user %}
-            <a class="nav-link active" href={{url_user}}>Login</a>
+            <a class="nav-link" href={{url_user}}>Login</a>
           {% else %}
             <a class="nav-link disabled" href={{url_user}}>Logout</a>
           {% endif %}
