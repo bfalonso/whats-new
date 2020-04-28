@@ -1,0 +1,17 @@
+{% extends "skeleton.html" %}
+{% block content %}
+<div class="container">
+    <blockquote class="blockquote text-center">
+        <br><p class="mb-0">Personas a las que le ha gustado tu publicación</p>
+        <br>
+    </blockquote>
+<ul class="list-group">
+    {% for l in likes %}
+    <li class="list-group-item"><b>{{ l.autor }}</b> <small>{{ l.fecha }}</small></li>
+    {% endfor %}
+</ul>
+</div>
+
+
+
+{% endblock %}

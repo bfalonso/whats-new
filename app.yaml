@@ -16,6 +16,18 @@ handlers:
   script: handlers.publicaciones.addPublicacion.app
   login: required
 
+- url: /publicaciones/borra
+  script: handlers.publicaciones.borra.app
+  login: required
+
+- url: /likes/darLike
+  script: handlers.likes.darLike.app
+  login: required
+
+- url: /likes/list
+  script: handlers.likes.list.app
+  login: required
+
 libraries:
 - name: webapp2
   version: "2.5.2"

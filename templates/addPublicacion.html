@@ -10,22 +10,26 @@
     }
 </script>
 <div class="container">
+    <blockquote class="blockquote text-center">
+        <br><p class="mb-0">Completa la información de tu nueva publicación</p>
+        <br>
+    </blockquote>
 <form id="addPublicacion" method="post" action="/publicaciones/add" onsubmit="return check()">
     <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label">Usuario</label>
-        <div class="col-sm-10">
+        <label for="email" class="col-sm-3 col-form-label">Usuario</label>
+        <div class="col-sm-9">
             <input type="text" readonly class="form-control-plaintext" name="email" id="email" value="{{email}}">
         </div>
     </div>
     <div class="form-group row">
-        <label for="url" class="col-sm-2 col-form-label">URL del video</label>
-        <div class="col-sm-10">
+        <label for="url" class="col-sm-3 col-form-label">URL del video</label>
+        <div class="col-sm-9">
             <input type="text" class="form-control" name="url" id="url" placeholder="URL">
         </div>
     </div>
     <div class="form-group row">
-        <label for="comentario" class="col-sm-2 col-form-label">Comentario</label>
-        <div class="col-sm-10">
+        <label for="comentario" class="col-sm-3 col-form-label">Comentario</label>
+        <div class="col-sm-9">
             <input type="text" class="form-control" name="comentario" id="comentario" placeholder="Comentario">
         </div>
     </div>

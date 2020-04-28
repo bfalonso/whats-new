@@ -6,7 +6,10 @@
             <br>
         </blockquote>
     {% else %}
-        ¡Haz <a href="{{url_user}}">login</a> para reaccionar a los comentarios de los demás y publicar tus vídeos favoritos!
+        <blockquote class="blockquote text-center">
+            <br><p class="mb-0">¡Haz <a href="{{url_user}}">login</a> para reaccionar a los comentarios de los demás y publicar tus vídeos favoritos!</p>
+            <br>
+        </blockquote>
     {% endif %}
     <div class="container" width="200px">
         <div class="row">
@@ -25,7 +28,14 @@
                                     <a href="/likes/list?id={{ p.key.urlsafe() }}" class="btn btn-light">Ver likes</a>
                                     <a href="/publicaciones/borra?id={{ p.key.urlsafe() }}" class="btn btn-danger">Borrar</a>
                                 {% else %}
-                                    <a href="/likes/darLike" class="btn btn-primary">Me gusta</a>
+                                    <a href="/likes/darLike?id={{ p.key.urlsafe() }}" class="btn btn-primary">Me gusta</a>
+                                    {% for l in likes %}
+                                        {% if p.key == l.publicacion %}
+                                            {% if user.email() == l.autor %}
+                                                <p><small>Ya te gusta esta publicación</small></p>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
                                 {% endif %}
                             {% endif %}
                         </div>
@@ -37,4 +47,7 @@
             {% endif %}
         </div>
     </div>
+
 {% endblock %}
+
+

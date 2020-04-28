@@ -4,7 +4,6 @@ import time
 from webapp2_extras import jinja2
 from webapp2_extras.users import users
 from model.publicacion import Publicacion
-from datetime import datetime
 
 
 class AddPublicacionHandler(webapp2.RequestHandler):
@@ -14,6 +13,7 @@ class AddPublicacionHandler(webapp2.RequestHandler):
         email = user.email()
 
         valores = {
+            "user": user,
             "email": email
         }
 
@@ -23,7 +23,6 @@ class AddPublicacionHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         email = user.email()
         url = self.request.get("url")
-        print(url)
         comentario = self.request.get("comentario")
 
         if not url or not comentario:
