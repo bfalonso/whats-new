@@ -23,9 +23,9 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         publicaciones = Publicacion.query().order(-Publicacion.fecha)
+        print(publicaciones.count())
 
         if user:
-            print(user.email())
             url_user = users.create_logout_url("/")
         else:
             url_user = users.create_login_url("/")
