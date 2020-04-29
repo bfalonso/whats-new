@@ -1,10 +1,7 @@
 {% extends "skeleton.html" %}
 {% block content %}
     {% if user %}
-        <blockquote class="blockquote text-center">
-            <br><p class="mb-0">En esta sección podrás ver y reaccionar a los comentarios de los demás. También podrás gestionar los tuyos, si aún no has publicado ninguno, ¿a qué esperas?</p>
-            <br>
-        </blockquote>
+        <br>
     {% else %}
         <blockquote class="blockquote text-center">
             <br><p class="mb-0">¡Haz <a href="{{url_user}}">login</a> para reaccionar a los comentarios de los demás y publicar tus vídeos favoritos!</p>

@@ -15,3 +15,9 @@ indexes:
   - name: publicacion
   - name: fecha
     direction: desc
+
+- kind: Publicacion
+  properties:
+  - name: autor
+  - name: fecha
+    direction: desc
