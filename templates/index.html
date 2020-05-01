@@ -23,6 +23,7 @@
                             {% if user %}
                                 {% if user.email() == p.autor %}
                                     <a href="/likes/list?id={{ p.key.urlsafe() }}" class="btn btn-light">Ver likes</a>
+                                    <a href="/publicaciones/modifica?id={{ p.key.urlsafe() }}" class="btn btn-light">Modificar</a>
                                     <a href="/publicaciones/borra?id={{ p.key.urlsafe() }}" class="btn btn-danger">Borrar</a>
                                 {% else %}
                                     <a href="/likes/darLike?id={{ p.key.urlsafe() }}" class="btn btn-primary">Me gusta</a>

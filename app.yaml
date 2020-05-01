@@ -13,11 +13,15 @@ handlers:
   script: handlers.main.app
 
 - url: /publicaciones/add
-  script: handlers.publicaciones.addPublicacion.app
+  script: handlers.publicaciones.anhade.app
   login: required
 
 - url: /publicaciones/borra
   script: handlers.publicaciones.borra.app
+  login: required
+
+- url: /publicaciones/modifica
+  script: handlers.publicaciones.modifica.app
   login: required
 
 - url: /publicaciones/misPublicaciones

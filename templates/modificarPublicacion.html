@@ -1,0 +1,40 @@
+{% extends "skeleton.html" %}
+{% block content %}
+<script>
+    function check(){
+        const url = document.getElementById("url");
+        const com = document.getElementById("comentario");
+
+        return (url.value.trim().length > 0
+                && com.value.trim().length > 0);
+    }
+</script>
+<div class="container">
+    <blockquote class="blockquote text-center">
+        <br><p class="mb-0">Modifica los campos de tu publicación</p>
+        <br>
+    </blockquote>
+<form method="post" action="/publicaciones/modifica?id={{ p.key.urlsafe() }}" onsubmit="return check()">
+    <div class="form-group row">
+        <label for="email" class="col-sm-3 col-form-label">Usuario</label>
+        <div class="col-sm-9">
+            <input type="text" readonly class="form-control-plaintext" name="email" id="email" value="{{ email }}">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="url" class="col-sm-3 col-form-label">URL del video</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" name="url" id="url" value="{{ p.url }}" placeholder="URL">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="comentario" class="col-sm-3 col-form-label">Comentario</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" name="comentario" id="comentario" value="{{ p.comentario }}" placeholder="Comentario">
+        </div>
+    </div>
+  <button type="submit" class="btn btn-primary">Modificar</button>
+</form>
+    </div>
+
+{% endblock %}
