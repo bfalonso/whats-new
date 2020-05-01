@@ -4,6 +4,7 @@ from webapp2_extras.users import users
 from model.publicacion import Publicacion
 from model.like import Like
 
+
 class MisPublicacionesHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
@@ -25,6 +26,7 @@ class MisPublicacionesHandler(webapp2.RequestHandler):
         }
 
         self.response.write(jinja.render_template("index.html", **valores))
+
 
 app = webapp2.WSGIApplication([
     ('/publicaciones/misPublicaciones', MisPublicacionesHandler)
