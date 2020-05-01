@@ -11,10 +11,16 @@ class verLikesHandler(webapp2.RequestHandler):
         likes = Like.query(Like.publicacion == publicacion.key).order(-Like.fecha)
         user = users.get_current_user()
 
+        if user:
+            url_user = users.create_logout_url("/")
+        else:
+            url_user = users.create_login_url("/")
+
         jinja = jinja2.get_jinja2(app=self.app)
 
         valores = {
             "user": user,
+            "url_user": url_user,
             "likes": likes
         }
 

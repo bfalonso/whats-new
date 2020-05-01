@@ -9,7 +9,7 @@ class darLikeHandler(webapp2.RequestHandler):
     def get(self):
         p = Publicacion.recupera(self.request)
         autor = users.get_current_user().email()
-        yaMeGusta = Like.query(Like.autor == autor)
+        yaMeGusta = Like.query(Like.autor == autor, Like.publicacion == p.key)
 
         if yaMeGusta.count() == 0:
             like = Like(autor=autor, publicacion=p.key)

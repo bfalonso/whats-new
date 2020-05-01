@@ -12,8 +12,14 @@ class AddPublicacionHandler(webapp2.RequestHandler):
         user = users.get_current_user()
         email = user.email()
 
+        if user:
+            url_user = users.create_logout_url("/")
+        else:
+            url_user = users.create_login_url("/")
+
         valores = {
             "user": user,
+            "url_user": url_user,
             "email": email
         }
 

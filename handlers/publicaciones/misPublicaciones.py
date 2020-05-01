@@ -10,10 +10,16 @@ class MisPublicacionesHandler(webapp2.RequestHandler):
         publicaciones = Publicacion.query(Publicacion.autor == user.email()).order(-Publicacion.fecha)
         likes = Like.query()
 
+        if user:
+            url_user = users.create_logout_url("/")
+        else:
+            url_user = users.create_login_url("/")
+
         jinja = jinja2.get_jinja2(app=self.app)
 
         valores = {
             "user": user,
+            "url_user": url_user,
             "publicaciones": publicaciones,
             "likes": likes
         }
