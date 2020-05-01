@@ -5,7 +5,7 @@ from model.publicacion import Publicacion
 from model.like import Like
 
 
-class darLikeHandler(webapp2.RequestHandler):
+class DarLikeHandler(webapp2.RequestHandler):
     def get(self):
         p = Publicacion.recupera(self.request)
         autor = users.get_current_user().email()
@@ -20,5 +20,5 @@ class darLikeHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/likes/darLike', darLikeHandler)
+    ('/likes/darLike', DarLikeHandler)
 ], debug=True)

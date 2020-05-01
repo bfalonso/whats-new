@@ -1,5 +1,6 @@
-#Publicacion
+# Publicacion
 from google.appengine.ext import ndb
+
 
 class Publicacion(ndb.Model):
     url = ndb.StringProperty(required=True)

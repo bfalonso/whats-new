@@ -5,7 +5,7 @@ from model.like import Like
 from model.publicacion import Publicacion
 
 
-class verLikesHandler(webapp2.RequestHandler):
+class VerLikesHandler(webapp2.RequestHandler):
     def get(self):
         publicacion = Publicacion.recupera(self.request)
         likes = Like.query(Like.publicacion == publicacion.key).order(-Like.fecha)
@@ -28,5 +28,5 @@ class verLikesHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/likes/list', verLikesHandler)
+    ('/likes/list', VerLikesHandler)
 ], debug=True)

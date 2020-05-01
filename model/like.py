@@ -1,6 +1,8 @@
+# Like
 from google.appengine.ext import ndb
 
 from publicacion import Publicacion
+
 
 class Like(ndb.Model):
     autor = ndb.StringProperty(required=True)
