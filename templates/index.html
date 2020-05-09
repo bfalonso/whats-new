@@ -16,9 +16,9 @@
                     <div class="card" style="width: 530px;">
                         <div class="card-body">
                             <h5 class="card-title">{{ p.url }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Autor: {{ p.autor }}</h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-user" aria-hidden="true" style="font-size: x-large"></i><span> </span>{{ p.autor }}</h6>
                             <p class="card-text">{{ p.comentario }}</p>
-                            <p class="card-text"><small class="text-muted">Publicado: {{ p.fecha }}</small></p>
+                            <p class="card-text"><small class="text-muted"><i class="fa fa-calendar" aria-hidden="true" style="font-size: large"></i><span> </span>{{ p.fecha }}</small></p>
 
                             {% if user %}
                                 {% if user.email() == p.autor %}

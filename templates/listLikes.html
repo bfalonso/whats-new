@@ -13,7 +13,10 @@
         </blockquote>
         <ul class="list-group">
             {% for l in likes %}
-            <li class="list-group-item"><b>{{ l.autor }}</b> <small>{{ l.fecha }}</small></li>
+                <li class="list-group-item">
+                    <i class="fa fa-user" aria-hidden="true" style="font-size: x-large"></i><span> </span><b>{{ l.autor }}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-calendar" aria-hidden="true" style="font-size: x-large"></i><span> </span><small>{{ l.fecha }}</small>
+                </li>
             {% endfor %}
         </ul>
     {% endif %}
